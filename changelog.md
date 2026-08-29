@@ -1,3 +1,7 @@
+# 2.1.12
+- Fix bug where disabling `Allow UI Modifications` would crash the game.
+- Fix bug where Treasure Room sprite would always be the unlocked sprite.
+
 # 2.1.11
 - The textures are happy again yay!!
 

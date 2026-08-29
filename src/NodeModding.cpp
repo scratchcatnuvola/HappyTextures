@@ -17,7 +17,7 @@ class $modify(HTCCObject, CCObject) {
         if (!ret) return nullptr;
 
         auto modding = UIModding::get();
-        if (!modding->doModify) return CCObject::autorelease();
+        if (!modding->doModify) return ret;
 
         if (modding->isNode(this)) {
             MyCCNode* node = reinterpret_cast<MyCCNode*>(this);

@@ -14,7 +14,7 @@ class $modify(MyCreatorLayer, CreatorLayer) {
         if (!UIModding::get()->doModify) return CreatorLayer::onTreasureRoom(sender);
 
         auto ugv5 = GameManager::get()->getUGV("5");
-        if (ugv5) {
+        if (!ugv5) {
             return CreatorLayer::onTreasureRoom(sender);
         }
         auto scene = SecretRewardsLayer::scene(false);
