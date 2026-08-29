@@ -1,3 +1,7 @@
+# 2.1.14
+- Fix bug where 2.1.12 was working perfectly fine but SOMEONE didnt update
+miskaa. you have days left.
+
 # 2.1.13
 - Fix bug where you could go into the Treasure Room if it was locked.
 
