@@ -1,5 +1,5 @@
 # 2.1.13
-- Fix bug where you could only go into the Treasure Room if it was locked.
+- Fix bug where you could go into the Treasure Room if it was locked.
 
 # 2.1.12
 - Fix bug where disabling `Allow UI Modifications` would crash the game.
