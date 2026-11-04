@@ -641,16 +641,6 @@ void UIModding::setScaleBase(CCNode* node, const matjson::Value& attributes) {
     }
 }
 
-void UIModding::setDisablePages(CCNode* node, const matjson::Value& attributes) {
-    if (!attributes.contains("disable-pages")) return;
-
-    if (const auto& pagesVal = attributes["disable-pages"]; pagesVal.isBool()) {
-        if (!pagesVal.asBool().unwrap()) {
-            PagesAPI::enablePages(typeinfo_cast<CCMenu*>(node), false);
-        }
-    }
-}
-
 void UIModding::setText(CCNode* node, const matjson::Value& attributes) {
     if (!attributes.contains("text")) return;
 
