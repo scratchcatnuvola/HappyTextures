@@ -9,8 +9,7 @@
     "developer": "Uproxide",
     "description": "Texture Packs with more tools uwu mrrp :333",
     "early-load": true,
-    "dependencies": {}
-    },
+    "dependencies": {},
     "resources": {
         "files": [
             "resources/*"
