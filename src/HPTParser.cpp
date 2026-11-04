@@ -909,43 +909,7 @@ void HPTParser::setupParser() {
     }, [](CCNode* node) -> std::string {
         return ""; //TODO LAYOUT TO EXPORT
     });
-
-    registerAttribute("pages", [this](CCNode* node, std::shared_ptr<HPTNode> hptNode, std::string_view value) {
-        if (auto menu = typeinfo_cast<CCMenu*>(node)) {
-            auto boolRes = Utils::boolFromString(hptNode->attributes["enabled"]);
-            if (boolRes) {
-                PagesAPI::enablePages(menu, boolRes.unwrap());
-            }
-            std::string orientationStr = hptNode->attributes["orientation"];
-            if (!orientationStr.empty()) {
-                PageOrientation orientation;
-                if (orientationStr == "vertical") orientation = PageOrientation::VERTICAL;
-                else if (orientationStr == "horizontal") orientation = PageOrientation::HORIZONTAL;
-                PagesAPI::setOrientation(menu, orientation);
-            }
-
-            auto elementCountRes = numFromString<int>(hptNode->attributes["element-count"]);
-            if (elementCountRes) {
-                int elementCount = elementCountRes.unwrap();
-                PagesAPI::setElementCount(menu, elementCount);
-            }
-
-            auto maxSizeRes = numFromString<float>(hptNode->attributes["max-size"]);
-            if (maxSizeRes) {
-                float maxSize = maxSizeRes.unwrap();
-                PagesAPI::setMax(menu, maxSize);
-            }
-
-            auto buttonScaleRes = numFromString<float>(hptNode->attributes["button-scale"]);
-            if (buttonScaleRes) {
-                float buttonScale = buttonScaleRes.unwrap();
-                PagesAPI::setButtonScale(menu, buttonScale);
-            }
-        }
-    }, [](CCNode* node) -> std::string {
-        return ""; //TODO MOVE TO API;
-    });
-
+    
     registerAttribute("on-click", [this](CCNode* node, std::shared_ptr<HPTNode> hptNode, std::string_view value) {
         reinterpret_cast<HPTCCNode*>(node)->setOnClick(hptNode);
     }, nullptr, true);
