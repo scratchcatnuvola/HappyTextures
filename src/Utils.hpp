@@ -394,13 +394,13 @@ namespace Utils {
             auto path = pack.resourcesPath;
             if (!std::filesystem::is_directory(path)) continue;
 
-            const auto packStr = utils::string::pathToString(path);
+            const auto packStr = path.string();
             const size_t baseLen = packStr.length() + 1;
 
             for (const auto& entry : std::filesystem::recursive_directory_iterator(path)) {
                 if (!entry.is_regular_file()) continue;
 
-                const std::string fullPath = utils::string::pathToString(entry);
+                const std::string fullPath = entry.path().string();
                 if (fullPath.length() <= baseLen) continue;
 
                 std::string subStr = fullPath.substr(baseLen);
@@ -423,18 +423,18 @@ namespace Utils {
             
             if (!std::filesystem::is_directory(spritesheetsDir)) continue;
 
-            const auto packStr = utils::string::pathToString(path);
+            const auto packStr = path.string();
             const size_t baseLen = packStr.length() + 1;
 
             for (auto& entry : std::filesystem::recursive_directory_iterator(spritesheetsDir)) {
                 if (!entry.is_regular_file()) continue;
 
-                auto extension = utils::string::pathToString(entry.path().extension());
+                auto extension = entry.path().extension().string();
                 utils::string::toLowerIP(extension);
 
                 if (extension != ".plist") continue;
 
-                auto full = utils::string::pathToString(entry.path());
+                auto full = entry.path().string();
 
                 qualityToNormal(full);
 
