@@ -4,7 +4,6 @@
 #include "nodes/CCLabelBMFont.hpp"
 #include "UIModding.hpp"
 #include "Callbacks.hpp"
-#include <raydeeux.pages_api/include/PagesAPI.h>
 #include "HPTCCNode.hpp"
 #include <Geode/ui/GeodeUI.hpp>
 #include "NodeFactory.hpp"
