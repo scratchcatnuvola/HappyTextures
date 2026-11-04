@@ -21,6 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Fix include paths for local dependencies
+        run: |
+          find src -type f \( -name "*.hpp" -o -name "*.cpp" \) -exec sed -i 's|#include <alphalaneous.alphas_geode_utils/include/|#include <|g' {} +
+          find src -type f \( -name "*.hpp" -o -name "*.cpp" \) -exec sed -i 's|#include <geode.texture-loader/include/|#include <|g' {} +
+          find src -type f \( -name "*.hpp" -o -name "*.cpp" \) -exec sed -i '/raydeeux.pages_api/d' {} +
+        shell: bash
+
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
