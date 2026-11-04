@@ -14,7 +14,6 @@
 #include "Config.hpp"
 #include "HPTParser.hpp"
 #include "HPTCCNode.hpp"
-#include <raydeeux.pages_api/include/PagesAPI.h>
 #include "LabelValues.hpp"
 
 using namespace geode::prelude;
