@@ -22,6 +22,29 @@ endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
+CPMAddPackage(
+    NAME AlphasGeodeUtils
+    GITHUB_REPOSITORY scratchcatnuvola/Alphas-Geode-Utils
+    GIT_TAG main
+)
+
+CPMAddPackage(
+    NAME TextureLoader
+    GITHUB_REPOSITORY scratchcatnuvola/textureldr
+    GIT_TAG main
+)
+
+CPMAddPackage(
+    NAME NodeIDs
+    GITHUB_REPOSITORY scratchcatnuvola/NodeIDs
+    GIT_TAG main
+)
+
+CPMAddPackage(
+    NAME ImagePlus
+    GITHUB_REPOSITORY scratchcatnuvola/ImagePlus
+    GIT_TAG main
+)
 include(${CMAKE_SOURCE_DIR}/cmake/IncludeLibs.cmake)
 target_link_libraries(${PROJECT_NAME} third_party)
 
